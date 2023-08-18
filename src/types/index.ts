@@ -5,3 +5,14 @@ export type Entrada = {
 	pagada: boolean,
 	verificada: boolean,
 }
+
+export interface DatosUsuario {
+	idUsuario: number,
+  usuario: string,
+	scope: string[]
+}
+
+export interface Login {
+  usuario: string,
+  password: string,
+}

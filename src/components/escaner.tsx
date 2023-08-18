@@ -11,11 +11,10 @@ interface Person {
 
 interface EscanerProps {
 	mostrarEscaner: (value: boolean) => void,
-	entradasIniciales: Entrada[] | null
 }
 
-const Escaner = ({ mostrarEscaner, entradasIniciales }: EscanerProps) => {
-	const [entradas, setEntradas] = useState<Entrada[] | null>(entradasIniciales)
+const Escaner = ({ mostrarEscaner }: EscanerProps) => {
+	const [entradas, setEntradas] = useState<Entrada[] | null>()
   const [entrada, setEntrada] = useState<Entrada | null>()
 	const [errorLectorQR, setErrorLectorQR] = useState<boolean>(false)
 	const [notificacion, setNotificacion] = useState<string>('')

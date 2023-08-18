@@ -1,10 +1,22 @@
+import { recuperarToken } from "@/helpers"
 import { Entrada } from "../types"
 
 export interface EntradaError { error: string }
 
+const API_URL = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api`
+
 export const getEntradas = async (): Promise<Entrada[] | null> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/entrada`)
+    const token = recuperarToken()
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': token || '',
+      },
+    }
+
+    const res = await fetch(`${API_URL}/entrada`, requestOptions)
     if (res.status !== 200) {
       return null
     }
@@ -19,15 +31,17 @@ export const getEntradas = async (): Promise<Entrada[] | null> => {
 
 export const updateEntrada = async (payload: Entrada): Promise<Entrada | null> => {
   try {
+    const token = recuperarToken()
     const requestOptions = {
       method: 'PUT',
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json',
+        'auth-token': token || '',
       },
     }
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/entrada`, requestOptions)
+    const res = await fetch(`${API_URL}/entrada`, requestOptions)
     if (res.status !== 200) {
       return null
     }
@@ -42,15 +56,17 @@ export const updateEntrada = async (payload: Entrada): Promise<Entrada | null> =
 
 export const createEntrada = async (payload: Entrada): Promise<Entrada | null | EntradaError> => {
   try {
+    const token = recuperarToken()
     const requestOptions = {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json',
+        'auth-token': token || '',
       },
     }
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/entrada`, requestOptions)
+    const res = await fetch(`${API_URL}/entrada`, requestOptions)
     if (res.status !== 200) {
       const error = await res.json()
       return { error: error?.message }

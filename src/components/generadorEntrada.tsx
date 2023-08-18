@@ -20,7 +20,7 @@ interface DatosEntrada {
   verificada: boolean,
 }
 
-export default function GeneradorEntrada({ mostrarGenerador, entradaExistente = null }: GeneradorProps) {
+export default function GeneradorEntrada({ mostrarGenerador, entradaExistente = null, }: GeneradorProps) {
   const [datosNuevaEntrada, setDatosNuevaEntrada] = useState<DatosEntrada>({
     dni: null,
     nombre: '',
