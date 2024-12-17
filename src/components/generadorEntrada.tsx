@@ -162,16 +162,19 @@ export default function GeneradorEntrada({ mostrarGenerador, entradaExistente = 
           style={{ background: `url(${ImagenEntrada?.src})`, zoom: (window.outerWidth / 1280) * .9, }}
           className='entrada'
         >
-          <div className='bordeQrCode'>
-            <QRCode
-              size={256}
-              style={{
-                height: "auto",
-                width: '99%',
-              }}
-              value={getJsonEntrada()}
-              viewBox={`0 0 256 256`}
-            />
+          <div className='contenedorQRDatos'>
+            <div className='bordeQrCode'>
+              <QRCode
+                size={256}
+                style={{
+                  height: "auto",
+                  width: '99%',
+                }}
+                value={getJsonEntrada()}
+                viewBox={`0 0 256 256`}
+              />
+            </div>
+            <div className='datosPersona'>{entrada.nombre} - DNI: {entrada.dni}</div>
           </div>
         </div>
       )}

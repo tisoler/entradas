@@ -4,15 +4,33 @@
   height: 414px;
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 25px 25px 0 0;
+  padding: 25px 15px 0 0;
+}
+
+.contenedorQRDatos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .bordeQrCode {
   background-color: #FFFFFF;
-  width: 20%;
+  width: 160px;
+  margin-top: 90px;
   height: auto;
-  padding: 3px;
+  padding: 0.5%;
   float: right;
+}
+
+.datosPersona {
+  color: white;
+  font-size: 19px;
+  padding-bottom: 2px;
+  width: 100%;
+  text-align: center;
 }
 
 .inputDato {

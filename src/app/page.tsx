@@ -1,4 +1,3 @@
-'use client'
 
 import Lobby from '../components/lobby'
 
