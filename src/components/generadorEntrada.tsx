@@ -159,7 +159,7 @@ export default function GeneradorEntrada({ mostrarGenerador, entradaExistente = 
       { entrada && (
         <div 
           ref={divEntrada}
-          style={{ background: `url(${ImagenEntrada?.src})`, zoom: (window.outerWidth / 1280) * .9, }}
+          style={{ background: `url(${ImagenEntrada?.src})`, }}
           className='entrada'
         >
           <div className='contenedorQRDatos'>

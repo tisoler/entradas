@@ -4,7 +4,6 @@
   height: 414px;
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 25px 15px 0 0;
 }
 
 .contenedorQRDatos {
@@ -19,7 +18,8 @@
 .bordeQrCode {
   background-color: #FFFFFF;
   width: 160px;
-  margin-top: 90px;
+  margin-top: 220px;
+  margin-right: 25px;
   height: auto;
   padding: 0.5%;
   float: right;
@@ -28,7 +28,7 @@
 .datosPersona {
   color: white;
   font-size: 19px;
-  padding-bottom: 2px;
+  padding-bottom: 10px;
   width: 100%;
   text-align: center;
 }
